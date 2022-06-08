@@ -71,15 +71,12 @@ public class Persona implements Comparable<Persona>{
 
     @Override
     public String toString() {
-        return String.format("s%, d%, s%", nombre, edad, dni);
+        return String.format("%S, %d, %S \n", nombre, edad, dni);
     }
 
     @Override
-    public int compareTo(Persona personita) {
-        if (this.edad != personita.getEdad()) {
-            return this.edad - personita.getEdad();
-        }
-        return this.nombre.compareTo(personita.getNombre());
+    public int compareTo(Persona persona) {
+        return persona.edad-this.edad;
     }
 }
 

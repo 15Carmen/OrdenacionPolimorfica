@@ -13,14 +13,14 @@ public class Main {
      * @param args
      */
 
+    public static Comparable[] personas = new Persona[10]; //variable de la interfaz Comparable
+
     public static void main(String[] args) {
 
-        Persona [] personas = { new Persona("Carmen", 19,"123L"),
-                new Persona("Jesus", 20,"456K"),
-                new Persona("Eva", 42,"789J"),
-                new Persona("Manu", 20,"567M") };
-
-
+        personas=Utilidades.cargarPersonas();
+        //Utilidades.ordenarGenericoBurbuja(personas);
+        Utilidades.ordenarGenericoInsercionDirecta(personas);
+        System.out.println("personas ordenadas");
         System.out.println(Arrays.toString(personas));
     }
 }
