@@ -14,13 +14,20 @@ public class Main {
      */
 
     public static Comparable[] personas = new Persona[10]; //variable de la interfaz Comparable
+    public static Comparable[] perros = new Perro[10]; //variable de la interfaz Comparable
 
     public static void main(String[] args) {
 
         personas=Utilidades.cargarPersonas();
-        //Utilidades.ordenarGenericoBurbuja(personas);
-        Utilidades.ordenarGenericoInsercionDirecta(personas);
-        System.out.println("personas ordenadas");
+        perros=Utilidades.cargarPerros();
+
+        Utilidades.ordenarGenericoBurbuja(perros);
+        Utilidades.ordenarGenericoSeleccionDirecta(personas);
+
+        System.out.println("Personas ordenadas de mayor a menor edad");
         System.out.println(Arrays.toString(personas));
+        System.out.println("Perros ordenados por orden alfabetico");
+        System.out.println(Arrays.toString(perros));
+
     }
 }

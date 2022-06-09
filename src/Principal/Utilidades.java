@@ -15,6 +15,18 @@ public class Utilidades {
         return personas;
     }
 
+    public static Comparable[] cargarPerros() {
+        Comparable[] perros = new Perro[]{
+                new Perro("Choco", "rubio", 12),
+                new Perro("Thor", "negro", 23),
+                new Perro("Moraima", "blanco y marron", 34),
+                new Perro("Alma", "marron", 45),
+                new Perro("Moqueta", "negro y marron", 56),
+                new Perro("Turron", "marron", 67),
+        };
+        return perros;
+    }
+
     /**
      * Ordenamos la edad de las personas de menor a mayor
      * @param comparables
@@ -33,22 +45,22 @@ public class Utilidades {
         }
     }
 
-    public static void ordenarGenericoInsercionDirecta(Comparable[] comparables){
+    public static void ordenarGenericoSeleccionDirecta(Comparable[] comparables){
 
         Comparable aux = null;
-        for (int p = 1; p < comparables.length; p++){
-            aux = comparables[p];
-            int j = p - 1;
-            while ((j >= 0) &&
-                    (comparables[p].compareTo(comparables[j]) < 0)){
+        int minimo=0;
+        for (int i = 0; i < comparables.length; i++){
+            minimo=i;
+           for (int j = i+1; j < comparables.length; j++){
+               if (comparables[minimo].compareTo(comparables[j])>0){
+                   minimo=j;
+               }
+           }
+            aux = comparables[i];
+            comparables[i] = comparables[minimo];
+            comparables[minimo] = aux;
 
-                comparables[j + 1] = comparables[j];
-                j--;
-            }
-            comparables[j + 1] = aux;
         }
-
-
     }
 
 }
